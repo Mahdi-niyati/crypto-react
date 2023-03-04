@@ -23,12 +23,18 @@ const Landing = () => {
     return (
         <>
             <input type="text" placeholder="Search" />
-            <div>
-                {
-                    coins.map(coin => <p key={coin.id}>{coin.name}</p>)
-                }
-            </div>
-        </>
+            {
+                coins.length ? 
+                        <div>
+                            
+                            {
+                                coins.map(coin => <p key={coin.id}>{coin.name}</p>)
+                            }
+                        </div> :
+                <Loader />
+
+            }
+        </> 
     );
 };
 
